@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>createRestaurant</title>
+	<head>
+	<body>
+		<H1>Create Restaurant</H1>
+		<a href="/home" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Home</button></a>
+	<a href="logout" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Logout</button></a>
+		<hr><br>
+		<table border="0" >
+	    <form action="insertRestaurant" method="post" enctype="multipart/form-data">
+		<tr><th> name: </th><td> <input type="text" name="name" minlength=1 required> </td></tr>
+		<tr><th> borough: </th><td> <input type="text" name="borough"> </td></tr>
+		<tr><th> cuisine: </th><td> <input type="text" name="cuisine"> </td></tr>
+		<tr><th> photo: </th><td> <input type="file" name="filetoupload"> </td></tr>
+		<tr><th>street: </th><td> <input type="text" name="street"> </td></tr>
+		<tr><th>building: </th><td> <input type="text" name="building"> </td></tr>
+		<tr><th>zipcode: </th><td> <input type="text" name="zipcode"> </td></tr>
+		<tr><th> coord(lon.): </th><td> <input type="number" step="any" name="coordlon"> </td></tr>
+		<tr><th>coord(lat.): </th><td> <input type="number" step="any" name="coordlat"> </td></tr>
+		<tr><td> <input type="submit" value="insert">  </td><td></td></tr>
+	    </form>
+		</table>
+	</body>
+</html>

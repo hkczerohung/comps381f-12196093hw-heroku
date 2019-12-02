@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>View Detail</title>
+	</head>
+<body>
+	<H1>View Detail</H1>
+		<a href="/home" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Home</button></a>
+	<a href="logout" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Logout</button></a>
+	<hr><br>
+    <img src=" data:<%=restaurants[0].mimetype%>;base64, <%=restaurants[0].photo%>" style="width:100%">
+	<table border="0" >
+		<tr><th> name: </th><td> <%=restaurants[0].name%> </td></tr>
+		<tr><th> borough: </th><td> <%=restaurants[0].borough%> </td></tr>
+		<tr><th> cuisine: </th><td> <%=restaurants[0].cuisine%> </td></tr>		
+		<tr><th>street: </th><td> <%=restaurants[0].address.street%> </td></tr>
+		<tr><th>building: </th><td> <%=restaurants[0].address.building%> </td></tr>
+		<tr><th>zipcode: </th><td> <%=restaurants[0].address.zipcode%> </td></tr>
+		<tr><th> coord: </th><td> [ <%=restaurants[0].address.coord[0]%>, <%=restaurants[0].address.coord[1]%> ] </td></tr><tr><td><a href="/map?lat=<%=restaurants[0].address.coord[0]%>&lon=<%=restaurants[0].address.coord[1]%>">Map</a></td><td></td></tr>		
+	</table><br>
+
+	<table border="0" >
+	        <tr><td><a href="/updateRestaurant?_id=<%=restaurants[0]._id%>" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Update Restaurant</button>
+	</a></td>
+	<td><a href="/deleteRestaurant?_id=<%=restaurants[0]._id%>&downer=<%=restaurants[0].owner%>" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Delete Restaurant</button>
+	</a></td>
+	<td><a href="/ratingRestaurant?_id=<%=restaurants[0]._id%>" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Rate Restaurant</button>
+	</a></td>
+	</tr>
+	</table>
+
+	<hr><br>
+
+	<table border="0" >
+		<tr><th>Rating</th><td></td></tr>
+		<% if(restaurants[0].grades!=null){ %>   
+		    <% for (i in restaurants[0].grades) { %>
+		        <tr><td><%=restaurants[0].grades[i].user%></td><td><%=restaurants[0].grades[i].score%></td></tr>		     
+
+		    <% } %>
+		<% } %>
+	</table>
+</body>
+
+</html>

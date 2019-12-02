@@ -1,0 +1,18 @@
+{
+    "name": "Comps381f-12196093hw",
+    "description": "Comps381f-12196093hw",
+    "author": "HungKamChung-12196093",
+    "version": "0.0.1",
+    "dependencies": {
+        "mongodb": "3.1",
+        "formidable": "latest",
+        "express": "*",
+        "ejs": "*",
+        "body-parser": "*",
+        "cookie-session": "*"
+    },
+    "engine": "node >= 0.10.0",
+    "scripts": {
+        "start": "node server"
+    }
+}

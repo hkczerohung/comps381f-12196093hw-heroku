@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Leaflet sample</title>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""/>
+      <!-- Make sure you put this AFTER Leaflet's CSS -->
+      <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""></script>
+   </head>
+
+   <body>
+	<H1>Rating Restaurant</H1>
+	<a href="/home" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Home</button></a>
+	<a href="logout" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Logout</button></a>
+      <div id = "map" style = "width: 900px; height: 580px"></div>
+      <hr><br>
+      <script>
+         // Creating map options
+         var mapOptions = {
+            center: [<%=lat%>,<%=lon%>],
+            zoom: <%=zoom%>
+         }
+         
+         // Creating a map object
+         var map = new L.map('map', mapOptions);
+         
+         // Creating a Layer object
+         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+         
+         // Adding layer to the map
+         map.addLayer(layer);
+
+         // Creating a marker
+         var marker = L.marker([<%=lat%>,<%=lon%>]);
+
+         // Adding marker to the map
+         marker.addTo(map);
+
+      </script>
+   </body>
+   
+</html>

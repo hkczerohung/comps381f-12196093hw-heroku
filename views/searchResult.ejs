@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>searchResult</title>
+    </head>
+    <body>
+	<H1>Search Restaurant</H1>
+	<a href="/home" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Home</button></a>
+	<a href="logout" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Logout</button></a>
+	<hr><br>
+
+	<table border="1" style="width:95%">
+        	<tr><th>Showing <%= restaurants.length %> document(s)</th></tr>       
+            <% for (i in restaurants) { %>
+                <tr><td><a href=/display?_id=<%=restaurants[i]._id%>><%=restaurants[i].name%></a></td></tr>
+            <% } %>
+        </table>
+    </body>
+</html>

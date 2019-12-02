@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>ratingRestaurant</title>
+	</head>
+	<body>
+		<H1>Rating Restaurant</H1>
+			<a href="/home" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Home</button></a>
+	<a href="logout" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Logout</button></a>
+
+		<hr><br>
+		
+		<table border="0" >
+			<form action="ratingResult" method="post" enctype="multipart/form-data">
+			<tr><th>Do you want to give it a rating?</th><td><input type="hidden" name="rid" value=<%=restaurants[0]._id%>></td></tr>
+			<tr><td> <input type="number" min=1 max=10 name="rate"> </td><td> <input type="submit" value="rating"> </td></tr>
+			</form>
+		</table>
+	</body>
+</html>
